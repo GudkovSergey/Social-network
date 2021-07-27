@@ -1,22 +1,24 @@
 import React from 'react';
+import prof from './Profile.module.css';
+
 
 const Profile = () => {
     return(
-        <div className='content'>
-            <div className='banner'>
+        <div className={prof.content}>
+            <div className={prof.banner}>
                 <img src="https://ixbt.online/gametech/sadm_images/2009/017/acr/scr.jpg" alt=""/>
             </div>
-            <div className='avatar'>
+            <div className={prof.avatar}>
                 <img src="https://r3.mt.ru/r23/photo503C/20952863586-0/jpeg/bp.jpeg" alt=""/>
-                <div className='description' ></div>
+                <div className={prof.description} ></div>
             </div>
-            <div className='mypost'> My post
-                <div className="new_post">
+            <div className={prof.mypost}> My post
+                <div className={prof.newpost}>
                     New post
                 </div>
                 <div>
-                    <div className="post-1">post1</div>
-                    <div className="post-2">post2</div>
+                    <div className={prof.post_1}>post1</div>
+                    <div className={prof.post_2}>post2</div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,20 @@
+.nav {
+    width: 20%;
+    height: 100%;
+    background-color: #1e1e1e;
+    font-size: 37px;
+    font-weight: bold;
+    color: azure;
+    text-align: center;
+
+}
+.nav a {
+    text-decoration: none;
+    color: azure;
+}
+.profile {
+    margin-top: 40px;
+}
+.settings{
+    margin-top: 50px;
+}
