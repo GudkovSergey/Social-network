@@ -5,7 +5,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return(
-        <div className={prof.content}>
+        <div>
             <div className={prof.banner}>
                 <img src="https://ixbt.online/gametech/sadm_images/2009/017/acr/scr.jpg" alt=""/>
             </div>

@@ -12,10 +12,12 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: lightgray;
-
 
 }
+.content {
+  flex-direction: column;
+  width:80%;
+  height: 100%;
+  background-color: lightgray;
 
-
-
+}

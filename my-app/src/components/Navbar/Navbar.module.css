@@ -4,14 +4,18 @@
     background-color: #1e1e1e;
     font-size: 37px;
     font-weight: bold;
-    color: azure;
+    /*color: azure;*/
     text-align: center;
 
 }
-.nav a {
+.nav a{
     text-decoration: none;
     color: azure;
 }
+.nav a.activeLink{
+    color: gold;
+}
+
 .profile {
     margin-top: 40px;
 }

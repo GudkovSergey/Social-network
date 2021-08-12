@@ -7,9 +7,9 @@ const Post = (props) => {
             <img src="https://cdn.fishki.net/upload/post/2017/10/05/2397340/tn/photo.jpg" alt=""/>
             {props.message}
             <div>
-                <span>like
-                    <span className={prof.countcolor}> {props.likecount}</span>
-                </span>
+                <span>like</span>
+                <span className={prof.countcolor}> {props.likecount}</span>
+
             </div>
         </div>
 
