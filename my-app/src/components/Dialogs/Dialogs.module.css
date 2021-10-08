@@ -1,0 +1,30 @@
+.allDialogs{
+    display: flex;
+    flex-direction: row;
+
+}
+.dialogs__items{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+}
+.dialog{
+
+}
+.dialogs__items .active{
+    color: blue;
+    font-size: 18px;
+}
+.allMessages{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+}
+.message{
+
+}
+
+
+

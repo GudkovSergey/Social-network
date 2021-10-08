@@ -1,6 +1,6 @@
 .nav {
     width: 20%;
-    height: 100%;
+    /*height: auto;*/
     background-color: #1e1e1e;
     font-size: 37px;
     font-weight: bold;
