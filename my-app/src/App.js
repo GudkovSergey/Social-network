@@ -11,18 +11,23 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 
+
 const App = (props) => {
 
 
   return (
-      <BrowserRouter>
+
          <div className='app-wrapper'>
            <Header/>
            <div className='wrapper'>
            <Navbar/>
            <div className= 'content'>
 
-               <Route  path='/profile' render={() => <Profile postData ={props.state.profilePage.postData}/>}/>
+               <Route  path='/profile' render={() => <Profile
+                   postData ={props.state.profilePage.postData}
+                   addNewPost = {props.addNewPost}
+                   updateNewPostText = {props.updateNewPostText}
+                   newPostText = {props.state.profilePage.newPostText}/>}/>
                <Route path='/dialogs' render={() => <Dialogs dialogsData = {props.state.dialogsPage.dialogsData} messagesData ={props.state.dialogsPage.messagesData}/>}/>
                <Route path='/News' render={() => <News/>}/>
                <Route path='/Music' render={() => <Music/>}/>
@@ -34,7 +39,7 @@ const App = (props) => {
       </div>
 
     </div>
-    </BrowserRouter>
+
   );
 }
 

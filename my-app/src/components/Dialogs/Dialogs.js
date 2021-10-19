@@ -2,6 +2,9 @@ import React from 'react';
 import dial from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import prof from "../Profile/MyPosts/MyPosts.module.css";
+import DialogInput from "../DialogInput/AddPost";
+import AddPost from "../DialogInput/AddPost";
 
 const Dialogs = (props) => {
 
@@ -15,7 +18,9 @@ const Dialogs = (props) => {
     return (
         <div className={dial.allDialogs}>
 
-            <div className={dial.dialogs__items}>
+           <AddPost/>
+
+           <div className={dial.dialogs__items}>
                 {dialogsElements}
             </div>
 
