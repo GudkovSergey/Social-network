@@ -1,5 +1,5 @@
 import React from 'react';
-import f from './Friends.module.css';
+import navb from './Friends.module.css';
 
 const Friends = () => {
     return (
