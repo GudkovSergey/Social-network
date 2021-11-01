@@ -26,33 +26,35 @@ let store ={
             ]
         }
     },
+    rerenderEntireTree() {
+        console.log('State changed');
+    },
 
     getState(){
         debugger;
         return this._state;
     },
-    rerenderEntireTree() {
-        console.log('State changed');
-    },
-     addNewPost(postMessage) {
-        debugger;
-        let newPost = {
-            id: 5,
-            message: postMessage,
-            likecount: 0
-        };
-        this._state.profilePage.postData.push(newPost);
-        this.rerenderEntireTree(this._state)
-    },
-
-    updateNewPostText(newText) {
-
-        this._state.profilePage.newPostText = newText;
-        this.rerenderEntireTree(this._state)
-    },
     subscribe(observer) {
         this.rerenderEntireTree = observer;
-    }
+    },
+
+    
+    dispatch(action){
+        if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likecount: 0
+            };
+            this._state.profilePage.postData.push(newPost);
+            this.rerenderEntireTree(this._state)
+        }else if(action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this.rerenderEntireTree(this._state);
+        }
+        }
+
+
 }
 
 

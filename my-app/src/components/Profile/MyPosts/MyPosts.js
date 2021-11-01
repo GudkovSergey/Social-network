@@ -14,8 +14,8 @@ const MyPosts = (props) => {
                 <div>
                     <AddPost
                         newPostText = {props.newPostText}
-                        addNewPost = {props.addNewPost}
-                        updateNewPostText ={props.updateNewPostText}/>
+                        dispatch = {props.dispatch}
+                        />
                     <div className={prof.posts}>
                         {postsElement}
                     </div>
