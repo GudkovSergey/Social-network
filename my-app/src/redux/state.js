@@ -1,5 +1,7 @@
-import rereenderEntireTree from "../render";
 
+let rerenderEntireTree = ()=>{
+
+};
 let state = {
     profilePage : {
         postData : [
@@ -26,6 +28,7 @@ let state = {
         ]
     }
 }
+// window.state = state;
  export let addNewPost = (postMessage) => {
     let newPost = {
         id: 5,
@@ -33,11 +36,14 @@ let state = {
         likecount: 0
     };
     state.profilePage.postData.push(newPost);
-    rereenderEntireTree(state)
+    rerenderEntireTree(state)
 }
 export let updateNewPostText = (newText) => {
 
     state.profilePage.newPostText = newText;
-    rereenderEntireTree(state)
+    rerenderEntireTree(state)
+}
+export const subscribe = (observer)=>{
+    rerenderEntireTree = observer;
 }
 export default state;
