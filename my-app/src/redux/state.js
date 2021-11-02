@@ -47,7 +47,9 @@ let store ={
                 likecount: 0
             };
             this._state.profilePage.postData.push(newPost);
-            this.rerenderEntireTree(this._state)
+            this._state.profilePage.newPostText = '';
+            this.rerenderEntireTree(this._state);
+
         }else if(action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this.rerenderEntireTree(this._state);
