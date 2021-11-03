@@ -1,19 +1,22 @@
 import React from 'react';
 import dial from "../Dialogs/Dialogs.module.css";
 import prof from "../Profile/MyPosts/MyPosts.module.css";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/state";
+
+
 
 let AddPost = (props)=> {
     let newPostElement = React.createRef();
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
 
 
     }
     let onPostChange = ()=>{
         let text = newPostElement.current.value;
-        let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
+        let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
 
 
