@@ -2,22 +2,21 @@ import React from 'react';
 import dial from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import prof from "../Profile/MyPosts/MyPosts.module.css";
-import DialogInput from "../DialogInput/AddPost";
-import AddPost from "../DialogInput/AddPost";
-import MyPosts from "../Profile/MyPosts/MyPosts";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state";
+
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reduser";
 
 const Dialogs = (props) => {
      let state = props.store.getState().dialogsPage;
 
     let dialogsElements = state.dialogsData.map(d =>
         <DialogItem name = {d.name} id = {d.id}/>)
+
     let messageElements = state.messagesData.map(m =>
         <Message message = {m.message} id = {m.id}/>
     )
 
     let newMessageBody = state.newMessageBody;
+
     let  onSendMessageClick = ()=>{
         props.store.dispatch(sendMessageCreator())
     }
@@ -28,7 +27,7 @@ const Dialogs = (props) => {
     return (
         <div className={dial.allDialogs}>
 
-    
+
 
 
            <div className={dial.dialogs__items}>
