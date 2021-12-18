@@ -5,7 +5,7 @@ import dial from "../../Dialogs/Dialogs.module.css";
 
 const MyPosts = (props) => {
 
-    let postsElement = props.postData.map( p => <Post id = {p.id} message = {p.message} likecount = {p.likecount}/>);
+    let postsElement = props.postData.map( p => <Post id = {p.id} message = {p.message} key ={p.id} likecount = {p.likecount}/>);
 
     let newPostElement = React.createRef();
 

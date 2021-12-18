@@ -1,0 +1,16 @@
+.photo{
+    width: 150px;
+    height: 150px;
+
+}
+
+.selectedPage{
+    font-weight: bold;
+    color: black;
+}
+.pageCount{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
