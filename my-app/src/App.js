@@ -12,6 +12,7 @@ import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/Message/Dialogs-container";
 import UsersContainer from "./components/Users/users-container";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 const App = (props) => {
@@ -25,7 +26,7 @@ const App = (props) => {
                 <Navbar/>
                 <div className='content'>
 
-                    <Route path='/profile' render={() => <Profile store={props.store}/>}/>
+                    <Route path='/profile' render={() => <ProfileContainer />}/>
                     <Route path='/dialogs' render={() => <DialogsContainer store={props.store}
                                                                            dialogsData={props.dialogsData}
                                                                            messagesData={props.messagesData}/>}/>
