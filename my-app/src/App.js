@@ -13,6 +13,7 @@ import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/Message/Dialogs-container";
 import UsersContainer from "./components/Users/users-container";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = (props) => {
@@ -21,7 +22,7 @@ const App = (props) => {
     return (
 
         <div className='app-wrapper'>
-            <Header/>
+            <HeaderContainer/>
             <div className='wrapper'>
                 <Navbar/>
                 <div className='content'>
