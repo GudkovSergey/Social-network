@@ -6,7 +6,7 @@ import * as axios from "axios";
 
 let Users = (props) => {
 
-
+debugger
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
@@ -37,12 +37,13 @@ let Users = (props) => {
                         <div className={us.followButton}>
 
 
-                            {u.followed ? <button  disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                            {u.followed
+                                ? <button  disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                 props.toggleFollowingProgress(true, u.id);
 
                                     axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
                                         withCredentials: true,
-                                        headers: {'API-KEY': 'd558ebf6-595a-4aec-a20a-38840f78941c'}
+                                        headers: {'API-KEY': '2715d844-cdc9-4ba3-8069-935b69da0964'}
 
                                     })
 
@@ -60,7 +61,7 @@ let Users = (props) => {
                                     props.toggleFollowingProgress(true, u.id);
                                     axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                                         withCredentials: true,
-                                        headers: {'API-KEY': 'd558ebf6-595a-4aec-a20a-38840f78941c'}
+                                        headers: {'API-KEY': '2715d844-cdc9-4ba3-8069-935b69da0964'}
                                     })
 
                                         .then(response => {
