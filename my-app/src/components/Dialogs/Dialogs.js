@@ -2,6 +2,7 @@ import React from 'react';
 import dial from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -23,8 +24,8 @@ const Dialogs = (props) => {
     let  oneNewMessageChange = (e)=>{
       let body =  e.target.value;
       props.updateNewMessageBody(body);
-
     }
+
     return (
         <div className={dial.allDialogs}>
 
