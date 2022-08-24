@@ -2,6 +2,24 @@ import React from 'react';
 import prof from './MyPosts.module.css'
 import Post from "./Post/Post";
 import dial from "../../Dialogs/Dialogs.module.css";
+import {Field, reduxForm} from "redux-form";
+
+
+const AddNewPostForm = (props) =>{
+    return(
+        <form onSubmit={props.handleSubmit}>
+
+            <div >
+                < Field component="textarea" name="newPostText" className={prof.textInput}  />
+            </div>
+
+            <div>
+                <button className={prof.button}  >Add post</button>
+            </div>
+
+        </form>
+    )}
+ const AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm);
 
 const MyPosts = (props) => {
 
@@ -9,29 +27,16 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let onAddPost = () => {
-        props.addPost();
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
     }
-    let onPostChange = ()=>{
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text)
-    }
+
     return(
 
         <div className={dial.inputDialog}>
             <div className={prof.mypost}>
                 My post</div>
-            <div>
-
-                <div >
-                   <textarea className={prof.textInput} onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
-                </div>
-
-                <div>
-                <button className={prof.button} onClick={onAddPost} >Add post</button>
-                </div>
-
-            </div>
+          <AddNewPostFormRedux onSubmit ={onAddPost}/>
 
             <div className={prof.posts}>
                         {postsElement}
@@ -41,5 +46,6 @@ const MyPosts = (props) => {
 
 
     )}
+
 
 export default MyPosts;
