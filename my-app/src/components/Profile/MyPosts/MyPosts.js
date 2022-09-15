@@ -3,14 +3,16 @@ import prof from './MyPosts.module.css'
 import Post from "./Post/Post";
 import dial from "../../Dialogs/Dialogs.module.css";
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required,} from "../../../utils/validators/validators";
+import {Textarea} from "../../FormsControls/FormsControls";
 
-
+const maxLength10 = maxLengthCreator(10);
 const AddNewPostForm = (props) =>{
     return(
         <form onSubmit={props.handleSubmit}>
 
             <div >
-                < Field component="textarea" name="newPostText" className={prof.textInput}  />
+                < Field component={Textarea} name="newPostText" validate={[required, maxLength10]} className={prof.textInput}  />
             </div>
 
             <div>
@@ -25,7 +27,7 @@ const MyPosts = (props) => {
 
     let postsElement = props.postData.map( p => <Post id = {p.id} message = {p.message} key ={p.id} likecount = {p.likecount}/>);
 
-    let newPostElement = React.createRef();
+    // let newPostElement = React.createRef();
 
     let onAddPost = (values) => {
         props.addPost(values.newPostText);

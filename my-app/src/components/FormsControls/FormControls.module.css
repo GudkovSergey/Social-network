@@ -1,0 +1,14 @@
+
+.formControl.error input,
+.formControl.error textarea{
+    border: 2px solid red;
+}
+.formControl.error span{
+   color:  red;
+}
+.formError{
+    border: 1px solid red;
+    width: 25%;
+    padding: 5px;
+    color: red;
+}
