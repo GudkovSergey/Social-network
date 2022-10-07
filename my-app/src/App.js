@@ -1,11 +1,7 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
-
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import { Route, withRouter} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -27,9 +23,9 @@ class App extends React.Component {
     }
 
     render() {
-if (!this.props.initialized){
-    return <Preloader/>
-}
+        if (!this.props.initialized) {
+            return <Preloader/>
+        }
 
         return (
 
@@ -59,7 +55,8 @@ if (!this.props.initialized){
         );
     }
 }
-const mapStateToProps = (state)=>({
+
+const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 export default compose(

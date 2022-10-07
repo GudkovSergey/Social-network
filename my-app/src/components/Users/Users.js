@@ -2,31 +2,20 @@ import React from "react";
 import us from './users.module.css';
 import userPhoto from '../../assets/png1.png';
 import {NavLink} from "react-router-dom";
+import Paginator from "../FormsControls/Paginator";
 
 
 let Users = (props) => {
 
 
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
+
     return (
         <div>
 
-            <div className={us.pageCount}>
-                {pages.map(p => {
-                    return <span className={props.currentPage === p && us.selectedPage} onClick={(e) => {
+            <Paginator currentPage = {props.currentPage} onPageChanged ={props.onPageChanged} totalUsersCount  = {props.totalUsersCount} pageSize = {props.pageSize}  />
 
-                        props.onPageChanged((p));
 
-                    }}>{p}</span>
-                })}
-
-            </div>
             {
-
                 props.users.map(u => <div className={us.usersProfile} key={u.id}>
                     <div className={us.userImage}>
                         <div className={us.image}>
