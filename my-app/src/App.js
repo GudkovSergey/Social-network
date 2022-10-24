@@ -6,16 +6,16 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
-import DialogsContainer from "./components/Dialogs/Message/Dialogs-container";
-import UsersContainer from "./components/Users/users-container";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/App-reducer";
 import Preloader from "./components/Preloader";
-
+import {withSuspense} from "./components/Hoc/withSuspense";
+const DialogsContainer = React.lazy(() => import("./components/Dialogs/Message/Dialogs-container"));
+const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
+const UsersContainer = React.lazy(() => import("./components/Users/users-container"));
 
 class App extends React.Component {
     componentDidMount() {
@@ -35,11 +35,15 @@ class App extends React.Component {
                     <Navbar/>
                     <div className='content'>
 
-                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                        <Route path='/profile/:userId?'
+                               render={withSuspense(ProfileContainer)}/>
 
-                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                        <Route path='/dialogs'
+                               render={withSuspense(DialogsContainer)}/>
 
-                        <Route path='/Users' render={() => <UsersContainer/>}/>
+                        <Route path='/Users'
+                               render={withSuspense(UsersContainer)}/>
+                               
                         <Route path='/News' render={() => <News/>}/>
                         <Route path='/Music' render={() => <Music/>}/>
                         <Route path='/Settings' render={() => <Settings/>}/>
