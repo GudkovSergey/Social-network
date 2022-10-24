@@ -43,7 +43,7 @@ class App extends React.Component {
 
                         <Route path='/Users'
                                render={withSuspense(UsersContainer)}/>
-                               
+
                         <Route path='/News' render={() => <News/>}/>
                         <Route path='/Music' render={() => <Music/>}/>
                         <Route path='/Settings' render={() => <Settings/>}/>
